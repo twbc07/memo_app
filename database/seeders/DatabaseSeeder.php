@@ -19,5 +19,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+        if (config('app.env') == 'local') {
+            $this->call(MemoSeeder::class);
+        }
     }
 }
